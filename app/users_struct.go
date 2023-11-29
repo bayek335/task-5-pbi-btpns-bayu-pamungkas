@@ -23,11 +23,13 @@ type UsersCreateRequest struct {
 	Email    string `json:"email" binding:"required,email,max=64"`
 	Password string `json:"password" binding:"min=6"`
 }
+
 type UsersUpdateRequest struct {
 	Username string `json:"username" binding:"required,max=64"`
 	Email    string `json:"email" binding:"required,email,max=64"`
 	Password string `json:"password" binding:"min=6"`
 }
+
 type UsersLoginRequest struct {
 	Email    string `json:"email" binding:"required,email"`
 	Password string `json:"password" binding:"required"`

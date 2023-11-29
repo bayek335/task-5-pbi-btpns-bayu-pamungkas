@@ -11,6 +11,8 @@ type Config struct {
 	DatabaseUser     string
 	DatabasePassword string
 	DatabaseName     string
+
+	JwtKey string
 }
 
 func GetConfig() *Config {
@@ -23,5 +25,7 @@ func GetConfig() *Config {
 		DatabaseUser:     os.Getenv("DB_USER"),
 		DatabasePassword: os.Getenv("DB_PASSWORD"),
 		DatabaseName:     os.Getenv("DB_NAME"),
+
+		JwtKey: os.Getenv("JWT_KEY"),
 	}
 }
