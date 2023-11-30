@@ -25,9 +25,9 @@ In order to consume those endpoints make sure have a JWT Token and add the token
     Success 200 :
     {
         "success" : true,
-        "message" : "User succcessfully created",
+        "message" : "user succcessfully created",
         "data" : {
-            "id" : 1,
+            "id" : "@uuid",
             "username" : "Bayu Pamungkas",
             "email":"bayu@gmail.com",
             "is_active":"false"
@@ -37,7 +37,7 @@ In order to consume those endpoints make sure have a JWT Token and add the token
     Fail 400 :
     {
         "success" : false,
-        "message" : "The field email must be type of email"
+        "message" : "field email must be type of email"
         
     }
 ```
@@ -54,8 +54,8 @@ In order to consume those endpoints make sure have a JWT Token and add the token
 
     Fail : 
     {
-        "email":"bayugmail.com",
-        "password": "123123"
+        "email":"bayu@gmail.com",
+        "password": "12312"
     }
 ```
 #### Response
@@ -63,20 +63,22 @@ In order to consume those endpoints make sure have a JWT Token and add the token
     Success 200 :
     {
         "success" : true,
-        "message" : "User succcessfully loged in",
-        "token" : "@token"
+        "message" : "user succcessfully loged in",
+        "data" : {
+            "token" : "@token"
+        }
     }
 
     Fail 400 :
     {
         "success" : false,
-        "message" : "Wrong email or password"
+        "message" : "wrong email or password"
         
     }
 ```
 
 
-### `PUT` : ``v1/users/:1`` 
+### `PUT` : ``v1/users/:id`` 
 #### Request Body
 ```json
     Success :
@@ -98,9 +100,9 @@ In order to consume those endpoints make sure have a JWT Token and add the token
     Success 200 :
     {
         "success" : true,
-        "message" : "User succcessfully updated",
+        "message" : "user succcessfully updated",
         "data" : {
-            "id" : 1,
+            "id" : "@uuid",
             "username" : "Bayu Pamungkas",
             "email":"bayu@gmail.com",
             "is_active":"false"
@@ -110,7 +112,7 @@ In order to consume those endpoints make sure have a JWT Token and add the token
     Fail 404 :
     {
         "success" : false,
-        "message" : "User does not exist"
+        "message" : "user does not exist"
         
     }
 ```
@@ -124,7 +126,7 @@ In order to consume those endpoints make sure have a JWT Token and add the token
         "success" : true,
         "message" : "User succcessfully deleted",
         "data" : {
-            "id" : 1,
+            "id" : "@uuid",
             "username" : "Bayu Pamungkas",
             "email":"bayu@gmail.com",
             "is_active":"false"
@@ -139,13 +141,13 @@ In order to consume those endpoints make sure have a JWT Token and add the token
     }
 ```
 ### Unauthorized
-### `DELETE` : ``v1/users/:1`` 
+### `@METHOD`
 #### Response
 ```json
     Fail 401 :
     {
         "success" : false,
-        "message" : "Unauthorized, login first"
+        "message" : "unauthorize, login first"
         
     }
 ```
