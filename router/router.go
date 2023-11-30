@@ -8,6 +8,7 @@ import (
 	"github.com/bayek335/task-5-pbi-btpns-bayu-pamungkas/middlewares"
 	"github.com/bayek335/task-5-pbi-btpns-bayu-pamungkas/models"
 	"github.com/bayek335/task-5-pbi-btpns-bayu-pamungkas/services"
+	"github.com/gin-gonic/contrib/cors"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
@@ -15,6 +16,12 @@ import (
 func Router(db *gorm.DB) {
 	conf := app.GetConfig()
 	router := gin.Default()
+	router.Use(middlewares.Cors())
+	router.Use(cors.New(cors.Config{
+		AllowedOrigins: []string{"http://localhost:5173"},
+		AllowedMethods: []string{"POST", "PUT", "GET", "DELETE", "OPTION"},
+		AllowedHeaders: []string{"*"},
+	}))
 
 	usersModel := models.NewUser(db)
 	usersService := services.NewUser(usersModel)
