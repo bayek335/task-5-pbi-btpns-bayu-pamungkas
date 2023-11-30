@@ -40,12 +40,12 @@ func (control *authController) Register(c *gin.Context) {
 	}
 
 	// for unit testing, and comment if in deployment because unit testing also send a uuid
-	// if userRequest.ID.String() == "00000000-0000-0000-0000-000000000000" {
-	// 	userRequest.ID = uuid.New()
-	// }
+	if userRequest.ID.String() == "00000000-0000-0000-0000-000000000000" {
+		userRequest.ID = uuid.New()
+	}
 
 	// deployment
-	userRequest.ID = uuid.New()
+	// userRequest.ID = uuid.New()
 
 	// hash password using bcrypt
 	userRequest.Password = helpers.HashPassword(userRequest.Password)
@@ -55,7 +55,7 @@ func (control *authController) Register(c *gin.Context) {
 		returnErr(c, err)
 		return
 	}
-	response, _ := helpers.SuccessResponse(user)
+	response, _ := helpers.SuccessResponse(user, "created")
 	c.JSON(http.StatusCreated, response)
 }
 

@@ -21,7 +21,7 @@ func TestRegisterUser(t *testing.T) {
 	router := setRouter()
 	db := DatabaseConnection()
 	router.POST("/v1/users/register", controllers.NewAuth(services.NewUser(models.NewUser(db))).Register)
-	ID := uuid.New()
+	ID, _ := uuid.Parse(User_ID)
 	t.Run("create user success", func(t *testing.T) {
 
 		user := &app.UsersCreateRequest{

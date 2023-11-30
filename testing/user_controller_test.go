@@ -19,7 +19,7 @@ func TestUpdateUser(t *testing.T) {
 	router := setRouter()
 	db := DatabaseConnection()
 	router.PUT("/v1/users/:id", controllers.NewUser(services.NewUser(models.NewUser(db))).UpdateUser)
-	ID := uuid.New()
+	ID, _ := uuid.Parse(User_ID)
 
 	t.Run("update user success", func(t *testing.T) {
 		var username, email, password string = "Bayu Pamungkas update", "bayu@gmail.com", "111111"

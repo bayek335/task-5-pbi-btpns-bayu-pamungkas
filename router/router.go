@@ -29,6 +29,7 @@ func Router(db *gorm.DB) {
 
 	users.Use(middlewares.AuthJwtToken())
 	users.PUT("/:id", userController.UpdateUser)
+	users.DELETE("/:id", userController.DeleteUser)
 
 	if err := router.Run(conf.ServerHost + ":" + conf.ServerPort); err != nil {
 		log.Fatal(err.Error())

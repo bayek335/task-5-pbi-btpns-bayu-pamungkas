@@ -25,3 +25,5 @@ func DatabaseConnection() *gorm.DB {
 
 	return db
 }
+
+var User_ID string = "b2f53ff5-6389-4ee5-830d-42a8d73d6952"

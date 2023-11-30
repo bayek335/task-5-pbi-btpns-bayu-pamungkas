@@ -35,7 +35,7 @@ func ErrorDatabase(err error, tbl string) error {
 		if strings.Contains(err.Error(), "duplicate") {
 			return errors.New("email already exist")
 		}
-		if errors.Is(err, gorm.ErrRecordNotFound) {
+		if strings.Contains(err.Error(), "not found") {
 			return errors.New("user does not exist")
 		}
 	}
