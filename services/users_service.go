@@ -70,6 +70,11 @@ func (service *userService) UpdateUser(userRequest app.UsersUpdateRequest, user_
 }
 
 func (service *userService) DeleteUser(user_ID uuid.UUID) (*app.Users, error) {
-	user := &app.Users{}
+	user, err := service.model.DeleteUser(user_ID)
+	// check error from sql
+	if err != nil {
+		err = helpers.ErrorDatabase(err, tableName)
+		return nil, err
+	}
 	return user, nil
 }

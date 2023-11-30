@@ -1,9 +1,12 @@
 package models
 
 import (
+	"errors"
+
 	"github.com/bayek335/task-5-pbi-btpns-bayu-pamungkas/app"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 )
 
 type UsersModel interface {
@@ -43,11 +46,27 @@ func (model *userModel) CreateUser(user *app.Users) (*app.Users, error) {
 }
 
 func (model *userModel) UpdateUser(user *app.Users, user_ID uuid.UUID) (*app.Users, error) {
-	user.ID = user_ID
-	return user, nil
+	var User app.Users
+	result := model.db.Model(&User).Clauses(clause.Returning{}).Where("id = ?", user_ID).Updates(user)
+	if result.RowsAffected < 1 {
+		err := errors.New(gorm.ErrRecordNotFound.Error())
+		return nil, err
+	}
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &User, nil
 }
 
 func (model *userModel) DeleteUser(user_ID uuid.UUID) (*app.Users, error) {
-	user := &app.Users{}
-	return user, nil
+	var User app.Users
+	result := model.db.Clauses(clause.Returning{}).Where("id = ?", user_ID).Delete(&User)
+	if result.RowsAffected < 1 {
+		err := errors.New(gorm.ErrRecordNotFound.Error())
+		return nil, err
+	}
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &User, nil
 }
