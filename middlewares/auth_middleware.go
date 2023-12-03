@@ -9,11 +9,22 @@ import (
 
 func AuthJwtToken() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		userID := "test"
+		// user, err := helpers.GetCookie(c)
 
+		// // check cookie user if nil ask to login
+		// if err != nil {
+		// 	err := errors.New("unauthorize, login first")
+		// 	response, httpCode := helpers.ErrorResponse(err)
+		// 	c.JSON(httpCode, response)
+		// 	c.Abort()
+		// 	return
+		// }
+
+		// get auth token from header section
 		tokenString := c.Request.Header.Get("Authorization")
 
-		if !helpers.ValidateJwtToken(tokenString, userID) {
+		// check token with helpers
+		if !helpers.ValidateJwtToken(tokenString, c.Param("id")) {
 			err := errors.New("unauthorize, login first")
 			response, httpCode := helpers.ErrorResponse(err)
 			c.JSON(httpCode, response)

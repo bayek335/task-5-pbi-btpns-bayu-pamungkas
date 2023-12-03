@@ -36,7 +36,7 @@ func TestRegisterUser(t *testing.T) {
 
 		userResponse := &app.UsersResponse{
 			Success: true,
-			Message: "success",
+			Message: "user successfully created",
 		}
 		userResponse.Data.ID = user.ID
 		userResponse.Data.Username = user.Username

@@ -1,0 +1,53 @@
+{"@level":"error","@timestamp":"2023-12-02 12:09:53","action":"register","error":"email already exist","msg":"register error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 12:13:24","action":"FindUserByID","error":"invalid character 'u' looking for beginning of value","msg":"parsing session to struct","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 12:15:17","action":"FindUserByID","error":"invalid character 'u' looking for beginning of value","msg":"parsing session to struct","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 12:16:54","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 12:27:33","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 12:27:42","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 12:28:03","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 12:28:04","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 12:28:05","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 12:29:15","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 12:42:37","action":"CreatePhoto","error":"http: no such file","msg":"file not found","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 13:20:27","action":"CreatePhoto","error":"http: no such file","msg":"file not nil","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 13:20:28","action":"CreatePhoto","error":"http: no such file","msg":"file not nil","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 13:22:27","action":"CreatePhoto","error":"image file must jpg, jpeg or png","msg":"file is not an image type","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 13:22:32","action":"CreatePhoto","error":"image file must jpg, jpeg or png","msg":"file is not an image type","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 14:25:30","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 14:28:30","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 14:28:31","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 14:28:32","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"b2f53ff5-6389-4ee5-830d-42a8d73d6952"}
+{"@level":"error","@timestamp":"2023-12-02 15:01:57","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:06:45","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:26:34","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"fd036f0a-350f-475b-be97-74538466cf47"}
+{"@level":"error","@timestamp":"2023-12-02 15:27:18","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:21","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:22","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:23","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:24","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:25","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:25","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:25","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:25","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:26","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:26","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:26","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:26","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:32","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:27:32","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:28:19","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:28:23","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:28:24","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:31:07","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:31:09","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:42:42","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:42:44","action":"login","error":"wrong email or password","msg":"find user error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:42:47","action":"login","error":"wrong email or password","msg":"compare password error","user_id":"4c8d9369-8cbb-45af-b7ee-72f59ceb01c2"}
+{"@level":"error","@timestamp":"2023-12-02 15:42:58","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:42:59","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 15:48:36","action":"register","error":"email already exist","msg":"register error","user_id":""}
+{"@level":"error","@timestamp":"2023-12-02 17:56:57","action":"ValidateJwtToken","error":"token is malformed: token contains an invalid number of segments","msg":"JwtToken does not match","user_id":"d959c347-97ae-4452-bbcc-055ab7edc09f"}
+{"@level":"error","@timestamp":"2023-12-02 18:46:01","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}
+{"@level":"error","@timestamp":"2023-12-03 10:33:17","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}
+{"@level":"error","@timestamp":"2023-12-03 10:41:25","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":"03597709-3810-4007-a1ff-bbb6e89e7ef8"}
+{"@level":"error","@timestamp":"2023-12-03 10:53:36","action":"ValidateJwtToken","error":"token has invalid claims: token is expired","msg":"JwtToken does not match","user_id":""}

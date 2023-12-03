@@ -3,6 +3,8 @@ package testing
 import (
 	"log"
 
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -10,6 +12,7 @@ import (
 
 func setRouter() *gin.Engine {
 	router := gin.Default()
+	router.Use(sessions.Sessions("testing", cookie.NewStore([]byte("testing"))))
 	return router
 }
 

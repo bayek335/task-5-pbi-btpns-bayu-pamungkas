@@ -34,7 +34,7 @@ func TestUpdateUser(t *testing.T) {
 
 		userResponse := &app.UsersResponse{
 			Success: true,
-			Message: "success",
+			Message: "user successfully updated",
 		}
 		userResponse.Data.ID = ID
 		userResponse.Data.Username = username

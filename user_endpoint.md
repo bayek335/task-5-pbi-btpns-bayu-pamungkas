@@ -24,13 +24,19 @@ In order to consume those endpoints make sure have a JWT Token and add the token
 ```json
     Success 200 :
     {
-        "success" : true,
-        "message" : "user succcessfully created",
-        "data" : {
-            "id" : "@uuid",
-            "username" : "Bayu Pamungkas",
-            "email":"bayu@gmail.com",
-            "is_active":"false"
+        "success": true,
+        "message": "user successfully loged in",
+        "data": {
+            "user": {
+                "id": "@uuid",
+                "username": "Bayu Pamungkas",
+                "email": "bayu@gmail.com",
+                "is_active": false,
+                "activated_at": "@timestamp",
+                "created_at": "@timestamp",
+                "updated_at": "@timestamp"
+            },
+            "token": "@token"
         }
     }
 

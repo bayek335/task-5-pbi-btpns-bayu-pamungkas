@@ -13,6 +13,8 @@ type Config struct {
 	DatabaseName     string
 
 	JwtKey string
+
+	SessionKey string
 }
 
 func GetConfig() *Config {
@@ -27,5 +29,7 @@ func GetConfig() *Config {
 		DatabaseName:     os.Getenv("DB_NAME"),
 
 		JwtKey: os.Getenv("JWT_KEY"),
+
+		SessionKey: os.Getenv("SESSION_KEY"),
 	}
 }
