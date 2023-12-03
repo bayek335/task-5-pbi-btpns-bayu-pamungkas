@@ -22,7 +22,7 @@ I will add the :
 
 
 ### Testing
-Before running the Register test, make sure the users table is clear or does not have a record, because the id is User ID is Primary Key, Email is unique and I only set the ID and email with fixed value so it will conflict if running User Testing more than once before clear the data in users table in database.
+Before running the Register test, make sure the users table is clear or does not have a record, because the User ID is Primary Key, Email is unique and I set fixed value for the ID and email  so it will conflict if running User Testing more than once before clear the data in users table in database.
 
 Like i was text it was my first project, so i just implement ``unit testing`` for the user feature, even it only two or three files test I take a lot of time to reach the appropriate results. And the test code is too bad and does not implement appropriate Unit Testing I thought.
 
