@@ -19,14 +19,6 @@ func NewAuth(service services.UsersService) *authController {
 }
 
 /*
-/	create response json with error
-*/
-func returnErr(c *gin.Context, err error) {
-	response, _ := helpers.ErrorResponse(err)
-	c.JSON(http.StatusBadRequest, response)
-}
-
-/*
 /	create user account
 */
 func (control *authController) Register(c *gin.Context) {
@@ -52,6 +44,7 @@ func (control *authController) Register(c *gin.Context) {
 	// send user request to service
 	user, err := control.service.CreateUser(userRequest)
 	if err != nil {
+		helpers.ErrorLogging("", "register", "register error", err)
 		returnErr(c, err)
 		return
 	}
@@ -75,6 +68,7 @@ func (control *authController) Login(c *gin.Context) {
 	// check user is exist by email
 	user, err := control.service.FindUserByEmail(userRequest.Email)
 	if err != nil {
+		helpers.ErrorLogging("", "login", "find user error", err)
 		returnErr(c, err)
 		return
 	}
@@ -82,6 +76,7 @@ func (control *authController) Login(c *gin.Context) {
 	// matching password between password user request and password in database
 	if !helpers.ComparePassword(user.Password, userRequest.Password) {
 		err := helpers.ErrorLogin()
+		helpers.ErrorLogging(user.ID.String(), "login", "compare password error", err)
 		returnErr(c, err)
 		return
 	}
@@ -96,9 +91,13 @@ func (control *authController) Login(c *gin.Context) {
 	}
 	// generate jwt token
 	jwtToken := helpers.GenerateJwtToken(user)
-	// sstore user logging
+
+	// helpers.SetCookieUser(c, user)
+	helpers.SetSession(c, user)
+
+	// store user logging
 	helpers.UserLogging(userLog)
-	response := helpers.LoginSuccessResponse(jwtToken)
+	response := helpers.LoginSuccessResponse(user, jwtToken)
 	c.JSON(http.StatusOK, response)
 
 }

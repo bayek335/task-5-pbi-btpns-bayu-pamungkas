@@ -12,6 +12,7 @@ type UsersService interface {
 	CreateUser(userRequest app.UsersCreateRequest) (*app.Users, error)
 	UpdateUser(userRequest app.UsersUpdateRequest, user_ID uuid.UUID) (*app.Users, error)
 	DeleteUser(user_ID uuid.UUID) (*app.Users, error)
+	FindUserByID(user_ID uuid.UUID) (*app.Users, error)
 }
 
 type userService struct {
@@ -22,7 +23,7 @@ func NewUser(model models.UsersModel) *userService {
 	return &userService{model}
 }
 
-const tableName string = "users"
+const userTable string = "users"
 
 func (service *userService) FindUserByEmail(email string) (*app.Users, error) {
 	user, err := service.model.FindUserByEmail(email)
@@ -46,7 +47,7 @@ func (service *userService) CreateUser(userRequest app.UsersCreateRequest) (*app
 	user, err := service.model.CreateUser(user)
 	// check error from sql
 	if err != nil {
-		err = helpers.ErrorDatabase(err, tableName)
+		err = helpers.ErrorDatabase(err, userTable)
 		return nil, err
 	}
 	return user, nil
@@ -63,7 +64,7 @@ func (service *userService) UpdateUser(userRequest app.UsersUpdateRequest, user_
 	user, err := service.model.UpdateUser(User, user_ID)
 	// check error from sql
 	if err != nil {
-		err = helpers.ErrorDatabase(err, tableName)
+		err = helpers.ErrorDatabase(err, userTable)
 		return nil, err
 	}
 	return user, nil
@@ -73,7 +74,17 @@ func (service *userService) DeleteUser(user_ID uuid.UUID) (*app.Users, error) {
 	user, err := service.model.DeleteUser(user_ID)
 	// check error from sql
 	if err != nil {
-		err = helpers.ErrorDatabase(err, tableName)
+		err = helpers.ErrorDatabase(err, userTable)
+		return nil, err
+	}
+	return user, nil
+}
+
+func (service *userService) FindUserByID(user_ID uuid.UUID) (*app.Users, error) {
+	user, err := service.model.FindUserByID(user_ID)
+	// check error from sql
+	if err != nil {
+		err = helpers.ErrorDatabase(err, userTable)
 		return nil, err
 	}
 	return user, nil

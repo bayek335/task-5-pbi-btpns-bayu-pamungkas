@@ -14,6 +14,7 @@ type UsersModel interface {
 	CreateUser(user *app.Users) (*app.Users, error)
 	UpdateUser(user *app.Users, user_ID uuid.UUID) (*app.Users, error)
 	DeleteUser(user_ID uuid.UUID) (*app.Users, error)
+	FindUserByID(user_ID uuid.UUID) (*app.Users, error)
 }
 
 type userModel struct {
@@ -61,6 +62,19 @@ func (model *userModel) UpdateUser(user *app.Users, user_ID uuid.UUID) (*app.Use
 func (model *userModel) DeleteUser(user_ID uuid.UUID) (*app.Users, error) {
 	var User app.Users
 	result := model.db.Clauses(clause.Returning{}).Where("id = ?", user_ID).Delete(&User)
+	if result.RowsAffected < 1 {
+		err := errors.New(gorm.ErrRecordNotFound.Error())
+		return nil, err
+	}
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &User, nil
+}
+
+func (model *userModel) FindUserByID(user_ID uuid.UUID) (*app.Users, error) {
+	var User app.Users
+	result := model.db.Find(&User, user_ID)
 	if result.RowsAffected < 1 {
 		err := errors.New(gorm.ErrRecordNotFound.Error())
 		return nil, err

@@ -7,7 +7,7 @@ import (
 )
 
 type Users struct {
-	ID          uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4()"`
+	ID          uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
 	Username    string    `db:"username"`
 	Email       string    `db:"email"`
 	Password    string    `db:"password"`
@@ -15,6 +15,20 @@ type Users struct {
 	ActivatedAt time.Time `db:"activated_at"`
 	CreatedAt   time.Time `db:"created_at"`
 	UpdatedAt   time.Time `db:"updated_at"`
+}
+
+type UsersProfileResponse struct {
+	Success bool   `json:"success"`
+	Message string `json:"message"`
+	Data    struct {
+		ID          uuid.UUID `json:"id"`
+		Username    string    `json:"username"`
+		Email       string    `json:"email"`
+		IsActive    bool      `json:"is_active"`
+		ActivatedAt time.Time `json:"activated_at"`
+		CreatedAt   time.Time `json:"created_at"`
+		UpdatedAt   time.Time `json:"updated_at"`
+	} `json:"data"`
 }
 
 type UsersCreateRequest struct {
@@ -36,7 +50,7 @@ type UsersLoginRequest struct {
 }
 
 type UsersResponse struct {
-	Success bool   `json:"succes"`
+	Success bool   `json:"success"`
 	Message string `json:"message"`
 	Data    struct {
 		ID       uuid.UUID `json:"id"`
@@ -47,9 +61,18 @@ type UsersResponse struct {
 }
 
 type UsersLoginResponse struct {
-	Success bool   `json:"succes"`
+	Success bool   `json:"success"`
 	Message string `json:"message"`
 	Data    struct {
+		User struct {
+			ID          uuid.UUID `json:"id"`
+			Username    string    `json:"username"`
+			Email       string    `json:"email"`
+			IsActive    bool      `json:"is_active"`
+			ActivatedAt time.Time `json:"activated_at"`
+			CreatedAt   time.Time `json:"created_at"`
+			UpdatedAt   time.Time `json:"updated_at"`
+		} `json:"user"`
 		Token string `json:"token"`
 	} `json:"data"`
 }
