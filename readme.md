@@ -1,12 +1,16 @@
 ## Task PBI BTPNS Rakamin.id Bayu Pamungkas
-Hello everyone, this is a task project base experience, which the task is to build an api using ``Go-Languange``. This project still not implements Clean Code and Clean Architecture yet, because it is my first project with ``Go-language`` it spend a few days to finish it despite the project just a small project.
-With the project base experience or Virtual Internsip Experience Rakamin.id, it makes me to always learn something new, and it makes me know about Go fundamental too.
+Hello everyone, this is a task project base experience, which the task is to build an api using ``Go-Languange``. This project is still not implement a Clean Code or a Clean Architecture yet, ya it is my first project with ``Go-language`` and I spend a few days to finish it, despite the project just have a small case.
+With the project base experience or Virtual Internsip Experience Rakamin.id, it makes me curious to learn something new, and it encourages me know about Go fundamental too.
+
+### Access Endpoint
+Endpoints are available in the user_endpoint.md and photo_endpoint.md, which contain the request and response from the endpoint.
 
 ### Feature 
 - Register
 - Login
 - Update user
 - Remove user
+- Retrieve profile image
 - Upload profile image
 - Update profile image
 - Delete profile image
@@ -16,26 +20,21 @@ I will add the :
 - Email verification (SMTP) : After user registration user account still restricted to change user data, until the account is activated. User will receive Verification Code via email
 - Change profile image : User can upload image more than 1, and user can use which image do they want to be a profile image
 
-### Testing
-Before running the Register test, make sure the users table is clear or does not have a record, because the id is PK and Email is unique. If test runs once then it will create an account and if test runs again it will return err cause the id and email already exist. Except if the id and email are different.
-For Update and Delete user make sure user id is exist on the database
 
-### Requirements
+### Testing
+Before running the Register test, make sure the users table is clear or does not have a record, because the id is User ID is Primary Key, Email is unique and I only set the ID and email with fixed value so it will conflict if running User Testing more than once before clear the data in users table in database.
+
+Like i was text it was my first project, so i just implement ``unit testing`` for the user feature, even it only two or three files test I take a lot of time to reach the appropriate results. And the test code is too bad and does not implement appropriate Unit Testing I thought.
+
+### Logger
+Ya for the logger, I have searching a lot for how to implement logging be a part of the code and when it is using, but I don't get it enough. So I only implement the logger in User feature 
+
+
+### Tools
 - Go-Lang 
 - PostgreSQL
 - Postman
 - Code Editor
-
-### Structure
-```
-
-```
-
-### Installation
-```
-    go run main.go
-```
-- Endpoints are available in the user_endpoint.md and photo_endpoint.md
 
 ### Me
 - [Github](https://www.github.com/bayek335)
