@@ -1,6 +1,6 @@
 ## Task PBI BTPNS Rakamin.id Bayu Pamungkas
-Hello everyone, this is a task project base experience, which the task is to build an api using ``Go-Languange``. This project is still not implement a Clean Code or a Clean Architecture yet, ya it is my first project with ``Go-language`` and I spend a few days to finish it, despite the project just have a small case.
-With the project base experience or Virtual Internsip Experience Rakamin.id, it makes me curious to learn something new, and it encourages me know about Go fundamental too.
+Hello everyone, this is a task Project Base Internship, which the task is to build an api using ``Go-Languange``. This project is still not implement a Clean Code or a Clean Architecture yet, ya it is my first project with ``Go-language`` and I spend a few days to finish it, despite the project just have a small case.
+With the Project Base Internship Rakamin.id, it makes me curious to learn something new, and it encourages me know about Go fundamental too.
 
 ### Access Endpoint
 Endpoints are available in the user_endpoint.md and photo_endpoint.md, which contain the request and response from the endpoint.
