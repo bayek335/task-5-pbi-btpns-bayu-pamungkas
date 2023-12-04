@@ -1,5 +1,5 @@
 ## Task PBI BTPNS Rakamin.id Bayu Pamungkas
-Hello everyone, this is a task Project Base Internship, which the task is to build an api using ``Go-Languange``. This project is still not implement a Clean Code or a Clean Architecture yet, ya it is my first project with ``Go-language`` and I spend a few days to finish it, despite the project just have a small case.
+Hello everyone, this is a task Project Base Internship, which the task is to build an api using ``Go-Languange``. This project still not implement a Clean Code or a Clean Architecture yet, ya it is my first project with ``Go-language`` and I spend a few days to finish it, despite the project just have a small case.
 With the Project Base Internship Rakamin.id, it makes me curious to learn something new, and it encourages me know about Go fundamental too.
 
 ### Access Endpoint
